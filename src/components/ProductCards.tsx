@@ -1,10 +1,9 @@
-import { useContext } from 'react';
-import { ProductContext } from '../contexts/ProductContext.tsx';
-import { useCart } from '../contexts/CartContext.tsx';
+import { useProducts } from '../contexts/ProductContext.tsx';
+import { useCartDispatch } from '../contexts/CartContext.tsx';
 
 export default function ProductCards() {
-    const products = useContext(ProductContext);
-    const { cart, dispatch } = useCart();
+    const products = useProducts();
+    const dispatch = useCartDispatch();
 
     return (
         <div className="flex flex-wrap justify-center gap-4 p-4">

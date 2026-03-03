@@ -1,6 +1,6 @@
 import { createContext, useContext, useReducer } from 'react';
 
-type CartItem = {
+export type CartItem = {
     id: number;
     title: string;
     price: number;
@@ -43,7 +43,7 @@ function cartReducer(state: CartItem[], action: CartAction): CartItem[] {
     }
 }
 
-const CartContext = createContext<CartContextType>({ cart: [], dispatch: () => { } });
+const CartContext = createContext<CartContextType>({ cart: [], dispatch: () => {} });
 
 export function CartProvider({ children }: { children: React.ReactNode }) {
     const [cart, dispatch] = useReducer(cartReducer, []);
@@ -54,4 +54,5 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
     );
 }
 
-export const useCart = () => useContext(CartContext);
+export const useCart = () => useContext(CartContext).cart;
+export const useCartDispatch = () => useContext(CartContext).dispatch;

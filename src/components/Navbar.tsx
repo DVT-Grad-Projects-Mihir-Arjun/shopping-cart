@@ -1,3 +1,5 @@
+import CartDropdown from "./CartDropdown";
+
 export default function Navbar() {
     return (
         <div className="navbar bg-base-100 shadow-sm px-4">
@@ -5,7 +7,7 @@ export default function Navbar() {
                 <a className="text-xl font-bold">My Shop</a>
             </div>
             <div className="flex-none">
-                {/* cart icon will go here */}
+                <CartDropdown />
             </div>
         </div>
     );
