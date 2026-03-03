@@ -8,7 +8,7 @@ export default function CartIcon({ totalItems }: Props) {
             <div className="indicator">
                 <MdOutlineShoppingCart size={30} />
                 {totalItems > 0 && (
-                    <span className="badge badge-sm badge-primary indicator-item">{totalItems}</span>
+                    <span className="badge badge-sm badge-accent indicator-item">{totalItems}</span>
                 )}
             </div>
         </div>

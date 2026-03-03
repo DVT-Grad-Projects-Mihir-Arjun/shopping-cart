@@ -19,7 +19,7 @@ export default function ProductCards() {
                             <div className="btn btn-neutral btn-outline">{product.category}</div>
                         </div>
                         <p>{product.description}</p>
-                        <button className="btn btn-primary" onClick={() => dispatch({ type: 'ADD', product: { ...product, quantity: 1 } })}>
+                        <button className="btn btn-accent" onClick={() => dispatch({ type: 'ADD', product: { ...product, quantity: 1 } })}>
                             Add to Cart
                         </button>
                     </div>
