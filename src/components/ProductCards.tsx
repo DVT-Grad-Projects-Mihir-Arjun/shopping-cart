@@ -15,11 +15,13 @@ export default function ProductCards() {
                         <h2 className="card-title">{product.title}</h2>
                         <div className="flex items-center justify-between">
                             <p className='text-xl font-bold'>${product.price}</p>
-                            <div className="badge badge-accent">{product.category.toUpperCase()}</div>
+                            <div className="btn btn-neutral btn-outline">{product.category}</div>
                         </div>
                         <p>{product.description}</p>
                         <div className="card-actions justify-end">
-                            <button className="btn btn-primary">Buy Now</button>
+                            <button className="btn btn-success">Add</button>
+                            <button className="btn btn-error">Remove</button>
+                            {/* Need to Add something for adjusting the quantity */}
                         </div>
                     </div>
                 </div>
