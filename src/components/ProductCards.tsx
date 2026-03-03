@@ -1,8 +1,9 @@
-import { useContext } from 'react';
-import { ProductContext } from '../contexts/ProductContext.tsx';
+import { useProducts } from '../contexts/ProductContext.tsx';
+import { useCartDispatch } from '../contexts/CartContext.tsx';
 
 export default function ProductCards() {
-    const products = useContext(ProductContext);
+    const products = useProducts();
+    const dispatch = useCartDispatch();
 
     return (
         <div className="flex flex-wrap justify-center gap-4 p-4">
@@ -18,11 +19,9 @@ export default function ProductCards() {
                             <div className="btn btn-neutral btn-outline">{product.category}</div>
                         </div>
                         <p>{product.description}</p>
-                        <div className="card-actions justify-end">
-                            <button className="btn btn-success">Add</button>
-                            <button className="btn btn-error">Remove</button>
-                            {/* Need to Add something for adjusting the quantity */}
-                        </div>
+                        <button className="btn btn-primary" onClick={() => dispatch({ type: 'ADD', product: { ...product, quantity: 1 } })}>
+                            Add to Cart
+                        </button>
                     </div>
                 </div>
             ))}
