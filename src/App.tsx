@@ -1,11 +1,18 @@
+import ProductCards from './components/ProductCards.tsx';
 import './index.css'
+import Navbar from './components/Navbar.tsx';
+import { CartProvider } from './contexts/CartContext.tsx';
+import { ProductProvider } from './contexts/ProductContext.tsx';
 
 function App() {
   return (
     <>
-      <h1 className="text-3xl font-bold underline">
-        Hello world!
-      </h1>
+      <ProductProvider>
+        <CartProvider>
+          <Navbar />
+          <ProductCards />
+        </CartProvider>
+      </ProductProvider>
     </>
   )
 }
