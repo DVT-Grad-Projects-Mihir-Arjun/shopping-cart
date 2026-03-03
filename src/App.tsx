@@ -1,6 +1,7 @@
 import ProductCards from './components/ProductCards.tsx';
 import './index.css'
 import { ProductContext } from './contexts/ProductContext.tsx';
+import Navbar from './components/Navbar.tsx';
 
 const products = await Promise.all(
   [1, 2, 3, 4].map(id =>
@@ -12,6 +13,7 @@ function App() {
   return (
     <>
       <ProductContext value={products}>
+        <Navbar/>
         <ProductCards />
       </ProductContext>
     </>
