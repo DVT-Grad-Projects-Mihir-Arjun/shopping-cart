@@ -2,6 +2,7 @@ import ProductCards from './components/ProductCards.tsx';
 import './index.css'
 import { ProductContext } from './contexts/ProductContext.tsx';
 import Navbar from './components/Navbar.tsx';
+import { CartProvider } from './contexts/CartContext.tsx';
 
 const products = await Promise.all(
   [2, 3, 4, 19].map(id =>
@@ -13,9 +14,11 @@ function App() {
   return (
     <>
       <ProductContext value={products}>
-        <Navbar/>
-        <ProductCards />
-      </ProductContext>
+            <CartProvider>
+                <Navbar/>
+                <ProductCards />
+            </CartProvider>
+        </ProductContext>
     </>
   )
 }
