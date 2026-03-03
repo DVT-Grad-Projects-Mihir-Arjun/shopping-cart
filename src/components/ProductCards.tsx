@@ -18,11 +18,7 @@ export default function ProductCards() {
                             <div className="btn btn-neutral btn-outline">{product.category}</div>
                         </div>
                         <p>{product.description}</p>
-                        <div className="card-actions justify-end">
-                            <button className="btn btn-success">Add</button>
-                            <button className="btn btn-error">Remove</button>
-                            {/* Need to Add something for adjusting the quantity */}
-                        </div>
+                        <button className="btn btn-primary">Add to Cart</button>
                     </div>
                 </div>
             ))}
