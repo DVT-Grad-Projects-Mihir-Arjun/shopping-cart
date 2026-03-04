@@ -1,6 +1,7 @@
 import { FiPlus, FiMinus } from "react-icons/fi";
 import { useCartDispatch } from '../contexts/CartContext.tsx';
 import type { CartItem as CartItemType } from '../contexts/CartContext.tsx';
+import { RxCross2 } from "react-icons/rx";
 
 type Props = { item: CartItemType };
 
@@ -21,7 +22,7 @@ export default function CartItem({ item }: Props) {
             <button
                 className="btn btn-xs btn-error btn-outline"
                 onClick={() => dispatch({ type: 'REMOVE', id: item.id })}
-            >✕</button>
+            ><RxCross2 size={15}/></button>
         </div>
     );
 }
