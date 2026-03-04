@@ -8,6 +8,7 @@ A React project which combines reducers with context in order to create a simple
 
 - [Installation](#installation)  
 - [App Overview](#app-overview)
+- [Lighthouse Performance](#lighthouse-performance)
 
 ---
 
