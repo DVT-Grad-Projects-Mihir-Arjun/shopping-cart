@@ -16,7 +16,7 @@ export default function ProductCards() {
                         <h2 className="card-title">{product.title}</h2>
                         <div className="flex items-center justify-between">
                             <p className='text-xl font-bold'>${product.price.toFixed(2)}</p>
-                            <div className="btn btn-neutral btn-outline">{product.category}</div>
+                           <div className="btn btn-neutral btn-outline capitalize">{product.category}</div>
                         </div>
                         <details className="mt-2">
                             <summary className="cursor-pointer font-medium text-sm">
