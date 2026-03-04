@@ -6,7 +6,7 @@ export default function ProductCards() {
     const dispatch = useCartDispatch();
 
     return (
-        <div className="flex flex-wrap justify-center gap-4 p-4">
+        <div className="flex flex-wrap justify-center gap-4 p-4 mt-8">
             {products.map(product => (
                 <div key={product.id} className="card bg-base-100 w-96 shadow-sm">
                     <figure>
@@ -15,7 +15,7 @@ export default function ProductCards() {
                     <div className="card-body">
                         <h2 className="card-title">{product.title}</h2>
                         <div className="flex items-center justify-between">
-                            <p className='text-xl font-bold'>${product.price}</p>
+                            <p className='text-xl font-bold'>${product.price.toFixed(2)}</p>
                             <div className="btn btn-neutral btn-outline">{product.category}</div>
                         </div>
                         <details className="mt-2">

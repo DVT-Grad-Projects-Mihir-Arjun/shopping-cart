@@ -10,9 +10,8 @@ type Product = {
 };
 
 const products: Product[] = await Promise.all(
-    [2, 3, 4, 19].map(id =>
-        fetch(`https://fakestoreapi.com/products/${id}`)
-            .then(res => { if (!res.ok) throw new Error(); return res.json(); })
+    [19, 2, 3, 4].map(id =>
+        fetch(`https://fakestoreapi.com/products/${id}`).then(response => response.json())
     )
 );
 
