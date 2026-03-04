@@ -11,7 +11,7 @@ export default function CartItem({ item }: Props) {
             <img src={item.image} alt={item.title} className="h-12 w-12 object-contain" />
             <div className="flex-1 min-w-0">
                 <p className="text-sm font-medium truncate">{item.title}</p>
-                <p className="text-sm text-gray-500">${item.price}</p>
+                <p className="text-sm text-gray-500">${item.price.toFixed(2)}</p>
             </div>
             <div className="flex items-center gap-1">
                 <button className="btn btn-xs btn-ghost" onClick={() => dispatch({ type: 'DECREMENT', id: item.id })}><FiMinus size={20} /></button>
