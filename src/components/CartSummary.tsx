@@ -7,7 +7,7 @@ export default function CartSummary({ totalPrice }: Props) {
                 <span>Total</span>
                 <span>${totalPrice.toFixed(2)}</span>
             </div>
-            <button className="btn btn-accent btn-sm mt-2 w-full" onClick={() => alert('DM for Special Price')}>
+            <button className="btn btn-accent btn-sm mt-2 w-full" onClick={() => alert('DM for Payment Options')}>
                 Checkout
             </button>
         </div>
