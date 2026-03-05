@@ -1,5 +1,6 @@
 import { useProducts } from '../contexts/ProductContext.tsx';
 import { useCartDispatch } from '../contexts/CartContext.tsx';
+import StarRating from './StarRating.tsx';
 
 export default function ProductCards() {
     const products = useProducts();
@@ -14,9 +15,15 @@ export default function ProductCards() {
                     </figure>
                     <div className="card-body">
                         <h2 className="card-title">{product.title}</h2>
-                        <div className="flex items-center justify-between">
-                            <p className='text-xl font-bold'>${product.price.toFixed(2)}</p>
-                           <div className="btn btn-outline btn-primary capitalize">{product.category}</div>
+                        <div className="flex items-center justify-between mt-1">
+                            <p className="text-2xl font-bold tracking-tight">${product.price.toFixed(2)}</p>
+                            <div className="flex flex-col items-end gap-0.5">
+                                <StarRating rate={product.rating.rate} />
+                                <span className="text-xs">({product.rating.count})</span>
+                            </div>
+                        </div>
+                        <div className="badge badge-soft badge-primary absolute top-3 right-3 text-sm capitalize border-base-300 bg-base-100/90 backdrop-blur-sm">
+                            {product.category}
                         </div>
                         <details className="mt-2">
                             <summary className="cursor-pointer font-medium text-sm">
