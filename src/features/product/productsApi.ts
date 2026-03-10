@@ -18,14 +18,12 @@ export const productsApi = createApi({
   baseQuery: fetchBaseQuery({ baseUrl: "https://fakestoreapi.com" }),
   endpoints: (builder) => ({
     getProducts: builder.query<Product[], number[]>({
-      queryFn: async (ids) => {
-        const products = await Promise.all(
-          ids.map((id) =>
-            fetch(`https://fakestoreapi.com/products/${id}`).then((res) =>
-              res.json(),
-            ),
-          ),
+      async queryFn(ids, _queryApi, _extraOptions, baseQuery) {
+        const results = await Promise.all(
+          ids.map((id) => baseQuery(`/products/${id}`)),
         );
+
+        const products = results.map((r: any) => r.data);
         return { data: products };
       },
     }),
