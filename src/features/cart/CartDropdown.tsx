@@ -1,4 +1,4 @@
-import { useCart } from "../store/hooks.ts";
+import { useCart } from "../../app/hooks.ts";
 import CartIcon from "./CartIcon.tsx";
 import CartItem from "./CartItems.tsx";
 import CartSummary from "./CartSummary.tsx";

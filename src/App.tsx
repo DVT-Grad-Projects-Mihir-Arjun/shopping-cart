@@ -1,9 +1,9 @@
-import ProductCards from "./components/ProductCards.tsx";
+import ProductCards from "./features/product/ProductCards.tsx";
 import "./index.css";
 import Navbar from "./components/Navbar.tsx";
 import { ProductProvider } from "./contexts/ProductContext.tsx";
 import { Provider } from "react-redux";
-import { store } from "./store/store.ts";
+import { store } from "./app/store.ts";
 
 function App() {
   return (

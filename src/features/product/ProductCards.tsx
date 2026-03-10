@@ -1,5 +1,5 @@
-import { useProducts } from "../contexts/ProductContext.tsx";
-import { addToCart } from "../slices/cartSlice.ts";
+import { useProducts } from "../../contexts/ProductContext.tsx";
+import { addToCart } from "../cart/cartSlice.ts";
 import StarRating from "./StarRating.tsx";
 import { useDispatch } from "react-redux";
 

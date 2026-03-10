@@ -1,7 +1,7 @@
 import { FiPlus, FiMinus } from "react-icons/fi";
-import type { CartItem as CartItemType } from "../types/cartTypes.ts";
+import type { CartItem as CartItemType } from "../../types/cartTypes.ts";
 import { RxCross2 } from "react-icons/rx";
-import { increment, decrement, remove } from "../slices/cartSlice.ts";
+import { increment, decrement, remove } from "./cartSlice.ts";
 import { useDispatch } from "react-redux";
 
 type Props = { item: CartItemType };
