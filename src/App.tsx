@@ -1,7 +1,6 @@
 import ProductCards from "./features/product/ProductCards.tsx";
 import "./index.css";
 import Navbar from "./components/Navbar.tsx";
-import { ProductProvider } from "./contexts/ProductContext.tsx";
 import { Provider } from "react-redux";
 import { store } from "./app/store.ts";
 
@@ -9,10 +8,8 @@ function App() {
   return (
     <>
       <Provider store={store}>
-        <ProductProvider>
-          <Navbar />
-          <ProductCards />
-        </ProductProvider>
+        <Navbar />
+        <ProductCards />
       </Provider>
     </>
   );

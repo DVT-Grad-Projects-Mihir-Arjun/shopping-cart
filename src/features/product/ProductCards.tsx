@@ -1,15 +1,33 @@
-import { useProducts } from "../../contexts/ProductContext.tsx";
+import { useGetProductsQuery } from "./productsApi.ts";
 import { addToCart } from "../cart/cartSlice.ts";
 import StarRating from "./StarRating.tsx";
 import { useDispatch } from "react-redux";
 
 export default function ProductCards() {
-  const products = useProducts();
+  const {
+    data: products,
+    isLoading,
+    isError,
+  } = useGetProductsQuery([19, 2, 3, 4]);
   const dispatch = useDispatch();
+
+  if (isLoading)
+    return (
+      <div className="flex justify-center p-8">
+        <span className="loading loading-spinner loading-lg" />
+      </div>
+    );
+
+  if (isError)
+    return (
+      <div className="flex justify-center p-8">
+        <p className="text-error">Failed to load products</p>
+      </div>
+    );
 
   return (
     <div className="flex flex-wrap justify-center gap-4 p-4 mt-8">
-      {products.map((product) => (
+      {products?.map((product) => (
         <div key={product.id} className="card bg-base-100 w-96 shadow-sm">
           <figure>
             <img
