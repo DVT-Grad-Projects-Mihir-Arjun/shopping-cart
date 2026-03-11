@@ -1,20 +1,18 @@
-import ProductCards from './components/ProductCards.tsx';
-import './index.css'
-import Navbar from './components/Navbar.tsx';
-import { CartProvider } from './contexts/CartContext.tsx';
-import { ProductProvider } from './contexts/ProductContext.tsx';
+import ProductCards from "./features/product/ProductCards.tsx";
+import "./index.css";
+import Navbar from "./components/Navbar.tsx";
+import { Provider } from "react-redux";
+import { store } from "./app/store.ts";
 
 function App() {
   return (
     <>
-      <ProductProvider>
-        <CartProvider>
-          <Navbar />
-          <ProductCards />
-        </CartProvider>
-      </ProductProvider>
+      <Provider store={store}>
+        <Navbar />
+        <ProductCards />
+      </Provider>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
